@@ -1,7 +1,6 @@
 [![Build Status](https://semaphoreci.com/api/v1/jeduardo824/cajehform-back-end/branches/master/badge.svg)](https://semaphoreci.com/jeduardo824/cajehform-back-end)
 
 # Cajeh Backend
-[![Build Status](https://semaphoreci.com/api/v1/jeduardo824/cajehform-back-end/branches/master/badge.svg)](https://semaphoreci.com/jeduardo824/cajehform-back-end)
 CajehForm backend repository
 ## Install
 
