@@ -3,14 +3,18 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    :email => "teste@teste.com",
+    :password => "teste",
+    :name => "Teste",
+    :phone_number => "(11) 1111-1111",
+    :collab => false,
+    :leader => false,
+    :password_confirmation => "Ok"
   }
 
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
-
-  let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
