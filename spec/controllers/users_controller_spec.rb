@@ -12,8 +12,14 @@ RSpec.describe UsersController, type: :controller do
     :password_confirmation => "Ok"
   }
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+  let(:invalid_attributes){
+    :email => "teste@teste.com",
+    :password => "teste",
+    :name => "Teste",
+    :phone_number => "(11) 1111-1111",
+    :collab => "false",
+    :leader => "true",
+    :password_confirmation => "Ok"
   }
 
   describe "GET #index" do
