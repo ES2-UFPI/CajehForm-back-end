@@ -1,3 +1,4 @@
 tmp/
 log/
 .tool-versions
+config/database.yml
