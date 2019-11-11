@@ -200,10 +200,10 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
+  cancan
   database_cleaner
   factory_bot_rails
   faker
-  cancan
   listen (>= 3.0.5, < 3.2)
   pg
   pry
