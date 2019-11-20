@@ -18,8 +18,8 @@ RSpec.describe UsersController, type: :controller do
     :password => "teste",
     :name => "Teste",
     :phone_number => "(11) 1111-1111",
-    :collab => "false",
-    :leader => "true",
+    :collab => nil,
+    :leader => nil,
     :password_confirmation => "Ok"
   }
   end
@@ -60,7 +60,7 @@ RSpec.describe UsersController, type: :controller do
       it "renders a JSON response with errors for the new user" do
         post :create, params: {user: invalid_attributes}
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to eq('application/json')
+        expect(response.content_type).to eq('application/json; charset=utf-8')
       end
     end
   end
@@ -93,7 +93,7 @@ RSpec.describe UsersController, type: :controller do
 
         put :update, params: {id: user.to_param, user: invalid_attributes}
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to eq('application/json')
+        expect(response.content_type).to eq('application/json; charset=utf-8')
       end
     end
   end
