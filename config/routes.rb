@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :saved_publications, only: [:show, :create, :destroy]
   resources :publications
   resources :users
