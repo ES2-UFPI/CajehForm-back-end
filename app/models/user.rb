@@ -4,4 +4,5 @@ class User < ApplicationRecord
   validates :collab, inclusion: { in: [true, false] }
   validates :leader, inclusion: { in: [true, false] }
   has_many :comments, dependent: :destroy
+  validates_presence_of :email
 end
