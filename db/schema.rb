@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_155252) do
+ActiveRecord::Schema.define(version: 2019_12_01_232810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "text"
+    t.bigint "publication_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["publication_id"], name: "index_comments_on_publication_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "publications", force: :cascade do |t|
     t.string "title"
@@ -21,6 +37,8 @@ ActiveRecord::Schema.define(version: 2019_11_11_155252) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "saves"
+    t.string "time_ago"
     t.index ["user_id"], name: "index_publications_on_user_id"
   end
 
@@ -45,6 +63,8 @@ ActiveRecord::Schema.define(version: 2019_11_11_155252) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "comments", "publications"
+  add_foreign_key "comments", "users"
   add_foreign_key "publications", "users"
   add_foreign_key "saved_publications", "publications"
   add_foreign_key "saved_publications", "users"
